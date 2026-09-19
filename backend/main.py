@@ -4,14 +4,14 @@ from fastapi.responses import FileResponse
 
 from pathlib import Path
 
-from engine import (
+from backend.engine import (
     calculate_priority,
     get_priority_level,
     optimize_resources,
     forecast_water_demand,
     get_scenario
 )
-from data import zones
+from backend.data import zones
 
 
 app = FastAPI(
