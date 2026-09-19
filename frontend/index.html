@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RELIEFOS | Disaster Response Intelligence</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+       <nav class="sidebar-nav">
+
+    <a href="#dashboard" class="nav-item">
+        <span class="nav-icon">⌂</span>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="#map-section" class="nav-item">
+        <span class="nav-icon">◉</span>
+        <span>Zone Intelligence</span>
+    </a>
+
+    <a href="#simulation-section" class="nav-item">
+        <span class="nav-icon">⚡</span>
+        <span>Simulation</span>
+    </a>
+
+    <a href="#optimizer-section" class="nav-item">
+        <span class="nav-icon">▣</span>
+        <span>Resource Optimizer</span>
+    </a>
+
+    <a href="#scenario-section" class="nav-item">
+        <span class="nav-icon">◆</span>
+        <span>Disaster Scenarios</span>
+    </a>
+
+    <a href="#forecast-section" class="nav-item">
+        <span class="nav-icon">◌</span>
+        <span>Forecast Intelligence</span>
+    </a>
+
+    <a href="#mission-section" class="nav-item">
+        <span class="nav-icon">➤</span>
+        <span>Mission Brief</span>
+    </a>
+
+</nav>
+
+
+        <!-- =========================
+             MAIN
+        ========================== -->
+
+        <main class="main">
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">
+                        DISASTER RESPONSE INTELLIGENCE
+                    </p>
+
+                    <h2>Command Center</h2>
+                </div>
+
+                <div class="live">
+                    <span></span>
+                    LIVE SIMULATION
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 STAT CARDS
+            ========================== -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        AFFECTED POPULATION
+                    </span>
+
+                    <strong id="affected">
+                        67,000
+                    </strong>
+
+                    <small>
+                        Across active zones
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card critical">
+
+                    <span class="stat-label">
+                        CRITICAL ZONES
+                    </span>
+
+                    <strong id="critical">
+                        3
+                    </strong>
+
+                    <small>
+                        Immediate attention
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        ACTIVE ZONES
+                    </span>
+
+                    <strong id="zones">
+                        5
+                    </strong>
+
+                    <small>
+                        Being monitored
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        RESOURCES
+                    </span>
+
+                    <strong id="resources">
+                        4
+                    </strong>
+
+                    <small>
+                        Categories tracked
+                    </small>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CONTENT GRID
+            ========================== -->
+
+            <section class="dashboard-grid">
+
+                <!-- =========================
+                     MAP
+                ========================== -->
+
+                <div class="panel map-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-kicker">
+                                OPERATIONAL VIEW
+                            </span>
+
+                            <h3>
+                                Disaster Zone Network
+                            </h3>
+                        </div>
+
+                        <span class="map-live">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="map">
+
+                        <div
+                            class="zone zone-a interactive-zone"
+                            data-zone="A"
+                        >
+                            A
+                        </div>
+
+                        <div
+                            class="zone zone-b interactive-zone"
+                            data-zone="B"
+                        >
+                            B
+                        </div>
+
+                        <div
+                            class="zone zone-c interactive-zone"
+                            data-zone="C"
+                        >
+                            C
+                        </div>
+
+                        <div
+                            class="zone zone-d interactive-zone"
+                            data-zone="D"
+                        >
+                            D
+                        </div>
+
+                        <div
+                            class="zone zone-e interactive-zone"
+                            data-zone="E"
+                        >
+                            E
+                        </div>
+
+
+                        <!-- ROUTES -->
+
+                        <div class="route route-1"></div>
+                        <div class="route route-2"></div>
+                        <div class="route route-3"></div>
+                        <div class="route route-4"></div>
+
+                    </div>
+
+
+                    <!-- MAP LEGEND -->
+
+                    <div class="map-legend">
+
+                        <span>
+                            <i class="green"></i>
+                            Stable
+                        </span>
+
+                        <span>
+                            <i class="yellow"></i>
+                            Elevated
+                        </span>
+
+                        <span>
+                            <i class="red"></i>
+                            Critical
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     PRIORITY QUEUE
+                ========================== -->
+
+                <div class="panel priority-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-kicker">
+                                RELIEF ENGINE
+                            </span>
+
+                            <h3>
+                                Priority Queue
+                            </h3>
+                        </div>
+
+                        <span class="count">
+                            05 ZONES
+                        </span>
+
+                    </div>
+
+
+                    <div class="priority-list">
+
+                        <div class="priority-item">
+
+                            <div class="rank">
+                                01
+                            </div>
+
+                            <div class="zone-name">
+                                <strong>ZONE C</strong>
+                                <small>
+                                    Medical + Water
+                                </small>
+                            </div>
+
+                            <div class="score critical-score">
+                                98
+                            </div>
+
+                        </div>
+
+
+                        <div class="priority-item">
+
+                            <div class="rank">
+                                02
+                            </div>
+
+                            <div class="zone-name">
+                                <strong>ZONE A</strong>
+                                <small>
+                                    Water shortage
+                                </small>
+                            </div>
+
+                            <div class="score critical-score">
+                                89
+                            </div>
+
+                        </div>
+
+
+                        <div class="priority-item">
+
+                            <div class="rank">
+                                03
+                            </div>
+
+                            <div class="zone-name">
+                                <strong>ZONE D</strong>
+                                <small>
+                                    Food shortage
+                                </small>
+                            </div>
+
+                            <div class="score elevated-score">
+                                78
+                            </div>
+
+                        </div>
+
+
+                        <div class="priority-item">
+
+                            <div class="rank">
+                                04
+                            </div>
+
+                            <div class="zone-name">
+                                <strong>ZONE B</strong>
+                                <small>
+                                    Access restricted
+                                </small>
+                            </div>
+
+                            <div class="score elevated-score">
+                                61
+                            </div>
+
+                        </div>
+
+
+                        <div class="priority-item">
+
+                            <div class="rank">
+                                05
+                            </div>
+
+                            <div class="zone-name">
+                                <strong>ZONE E</strong>
+                                <small>
+                                    Stable
+                                </small>
+                            </div>
+
+                            <div class="score stable-score">
+                                42
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SIMULATION CONTROL CENTER
+            ========================== -->
+
+            <section class="simulation-panel panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-kicker">
+                            RELIEF ENGINE
+                        </span>
+
+                        <h3>
+                            Simulation Control Center
+                        </h3>
+                    </div>
+
+                    <span class="simulation-status">
+                        READY
+                    </span>
+
+                </div>
+
+
+                <div class="simulation-body">
+
+                    <!-- POPULATION -->
+
+                    <div class="control">
+
+                        <div class="control-top">
+
+                            <label>
+                                POPULATION AFFECTED
+                            </label>
+
+                            <span id="populationValue">
+                                12,000
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="population"
+                            min="1000"
+                            max="30000"
+                            value="12000"
+                            step="500"
+                        >
+
+                    </div>
+
+
+                    <!-- WATER -->
+
+                    <div class="control">
+
+                        <div class="control-top">
+
+                            <label>
+                                WATER AVAILABILITY
+                            </label>
+
+                            <span id="waterValue">
+                                50%
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="water"
+                            min="0"
+                            max="100"
+                            value="50"
+                        >
+
+                    </div>
+
+
+                    <!-- FOOD -->
+
+                    <div class="control">
+
+                        <div class="control-top">
+
+                            <label>
+                                FOOD AVAILABILITY
+                            </label>
+
+                            <span id="foodValue">
+                                50%
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="food"
+                            min="0"
+                            max="100"
+                            value="50"
+                        >
+
+                    </div>
+
+
+                    <!-- MEDICINE -->
+
+                    <div class="control">
+
+                        <div class="control-top">
+
+                            <label>
+                                MEDICINE AVAILABILITY
+                            </label>
+
+                            <span id="medicineValue">
+                                50%
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="medicine"
+                            min="0"
+                            max="100"
+                            value="50"
+                        >
+
+                    </div>
+
+
+                    <!-- ACCESSIBILITY -->
+
+                    <div class="control">
+
+                        <div class="control-top">
+
+                            <label>
+                                ROAD ACCESSIBILITY
+                            </label>
+
+                            <span id="accessibilityValue">
+                                50%
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="accessibility"
+                            min="0"
+                            max="100"
+                            value="50"
+                        >
+
+                    </div>
+
+
+                    <!-- SIMULATE BUTTON -->
+
+                    <button
+                        id="simulateButton"
+                        class="simulate-button"
+                    >
+                        RUN SIMULATION
+                    </button>
+
+
+                    <!-- RESULT -->
+
+                    <div
+                        id="simulationResult"
+                        class="simulation-result"
+                    >
+
+                        <div class="result-label">
+                            CURRENT PRIORITY
+                        </div>
+
+                        <div
+                            id="simulationScore"
+                            class="result-score"
+                        >
+                            --
+                        </div>
+
+                        <div
+                            id="simulationLevel"
+                            class="result-level"
+                        >
+                            WAITING FOR SIMULATION
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 RESOURCE OPTIMIZER
+            ========================== -->
+
+            <section class="panel optimizer-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-kicker">
+                            RESOURCE INTELLIGENCE
+                        </span>
+
+                        <h3>
+                            Resource Optimizer
+                        </h3>
+                    </div>
+
+                    <span class="count">
+                        LIVE ALLOCATION
+                    </span>
+
+                </div>
+
+
+                <div class="optimizer-body">
+
+                    <div class="optimizer-summary">
+
+                        <div>
+                            <span>
+                                WATER AVAILABLE
+                            </span>
+
+                            <strong>
+                                25,000 L
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>
+                                FOOD AVAILABLE
+                            </span>
+
+                            <strong>
+                                18,000 KG
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>
+                                MEDICINE AVAILABLE
+                            </span>
+
+                            <strong>
+                                5,000 UNITS
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="optimizeButton"
+                        class="simulate-button"
+                    >
+                        OPTIMIZE RESOURCES
+                    </button>
+
+
+                    <div
+                        id="allocationResult"
+                        class="allocation-result"
+                    >
+
+                        <div class="optimizer-placeholder">
+
+                            <div class="optimizer-icon">
+                                ◇
+                            </div>
+
+                            <strong>
+                                Allocation engine ready
+                            </strong>
+
+                            <small>
+                                Run optimization to calculate
+                                resource distribution.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 DISASTER SCENARIO ENGINE
+            ========================== -->
+
+            <section class="panel scenario-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-kicker">
+                            EMERGENCY SIMULATION
+                        </span>
+
+                        <h3>
+                            Disaster Scenario Engine
+                        </h3>
+                    </div>
+
+                    <span class="count">
+                        SCENARIO CONTROL
+                    </span>
+
+                </div>
+
+
+                <div class="scenario-body">
+
+                    <div class="scenario-grid">
+
+                        <button
+                            class="scenario-card"
+                            data-scenario="flood"
+                        >
+
+                            <span class="scenario-icon">
+                                ≋
+                            </span>
+
+                            <strong>
+                                MAJOR FLOOD
+                            </strong>
+
+                            <small>
+                                Severe water contamination
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="scenario-card"
+                            data-scenario="heatwave"
+                        >
+
+                            <span class="scenario-icon">
+                                ◉
+                            </span>
+
+                            <strong>
+                                EXTREME HEATWAVE
+                            </strong>
+
+                            <small>
+                                Increased water demand
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            class="scenario-card"
+                            data-scenario="earthquake"
+                        >
+
+                            <span class="scenario-icon">
+                                △
+                            </span>
+
+                            <strong>
+                                EARTHQUAKE
+                            </strong>
+
+                            <small>
+                                Access infrastructure damaged
+                            </small>
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="scenarioStatus"
+                        class="scenario-status"
+                    >
+
+                        <span>
+                            SCENARIO STATUS
+                        </span>
+
+                        <strong>
+                            BASELINE CONDITIONS
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FORECAST INTELLIGENCE
+            ========================== -->
+
+            <section class="panel forecast-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-kicker">
+                            PREDICTIVE INTELLIGENCE
+                        </span>
+
+                        <h3>
+                            Water Demand Forecast
+                        </h3>
+                    </div>
+
+                    <span class="count">
+                        NEXT 24 HOURS
+                    </span>
+
+                </div>
+
+
+                <div class="forecast-body">
+
+                    <div class="forecast-top">
+
+                        <div class="forecast-metric">
+
+                            <span>
+                                CURRENT DEMAND
+                            </span>
+
+                            <strong id="currentDemand">
+                                -- L
+                            </strong>
+
+                        </div>
+
+
+                        <div class="forecast-metric">
+
+                            <span>
+                                24H DEMAND
+                            </span>
+
+                            <strong id="futureDemand">
+                                -- L
+                            </strong>
+
+                        </div>
+
+
+                        <div class="forecast-metric">
+
+                            <span>
+                                FORECAST RISK
+                            </span>
+
+                            <strong
+                                id="forecastRisk"
+                                class="forecast-risk"
+                            >
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="forecast-chart">
+
+                        <div class="chart-label">
+                            PROJECTED WATER REQUIREMENT
+                        </div>
+
+
+                        <div
+                            id="forecastBars"
+                            class="forecast-bars"
+                        >
+
+                            <div class="forecast-placeholder">
+                                Forecast engine ready
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="forecastButton"
+                        class="simulate-button"
+                    >
+                        GENERATE 24H FORECAST
+                    </button>
+
+
+                    <div
+                        id="forecastWarning"
+                        class="forecast-warning"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 MISSION BRIEF
+            ========================== -->
+
+            <section class="panel mission-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-kicker">
+                            COMMAND INTELLIGENCE
+                        </span>
+
+                        <h3>
+                            Mission Brief
+                        </h3>
+                    </div>
+
+                    <span
+                        id="missionStatus"
+                        class="count"
+                    >
+                        READY
+                    </span>
+
+                </div>
+
+
+                <div class="mission-body">
+
+                    <div
+                        id="missionHeadline"
+                        class="mission-headline"
+                    >
+                        Select a disaster scenario
+                        to generate an operational brief.
+                    </div>
+
+
+                    <div class="mission-grid">
+
+                        <div class="mission-card">
+
+                            <span>
+                                PRIORITY
+                            </span>
+
+                            <strong id="missionPriority">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="mission-card">
+
+                            <span>
+                                SEVERITY
+                            </span>
+
+                            <strong id="missionSeverity">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="mission-card">
+
+                            <span>
+                                24H DEMAND
+                            </span>
+
+                            <strong id="missionDemand">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="mission-card">
+
+                            <span>
+                                AFFECTED POPULATION
+                            </span>
+
+                            <strong id="missionPopulation">
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mission-action">
+
+                        <div>
+
+                            <span class="action-label">
+                                PRIORITY ACTION
+                            </span>
+
+                            <strong id="missionAction">
+                                Awaiting scenario analysis
+                            </strong>
+
+                        </div>
+
+                        <div
+                            id="missionIndicator"
+                            class="mission-indicator"
+                        >
+                            ●
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="missionButton"
+                        class="simulate-button"
+                    >
+                        GENERATE MISSION BRIEF
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ZONE INTELLIGENCE
+            ========================== -->
+
+            <section class="panel zone-intelligence-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-kicker">
+                            ZONE INTELLIGENCE
+                        </span>
+
+                        <h3>
+                            Selected Zone
+                        </h3>
+                    </div>
+
+                    <span
+                        id="selectedZoneStatus"
+                        class="count"
+                    >
+                        SELECT A ZONE
+                    </span>
+
+                </div>
+
+
+                <div class="zone-intelligence-body">
+
+                    <div class="selected-zone-header">
+
+                        <div>
+
+                            <span class="selected-zone-label">
+                                ZONE
+                            </span>
+
+                            <strong id="selectedZoneName">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="selected-zone-priority">
+
+                            <span>
+                                PRIORITY
+                            </span>
+
+                            <strong id="selectedZonePriority">
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="zone-data-grid">
+
+                        <div class="zone-data-card">
+
+                            <span>
+                                POPULATION
+                            </span>
+
+                            <strong id="zonePopulation">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="zone-data-card">
+
+                            <span>
+                                WATER
+                            </span>
+
+                            <strong id="zoneWater">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="zone-data-card">
+
+                            <span>
+                                FOOD
+                            </span>
+
+                            <strong id="zoneFood">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="zone-data-card">
+
+                            <span>
+                                MEDICINE
+                            </span>
+
+                            <strong id="zoneMedicine">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="zone-data-card">
+
+                            <span>
+                                ACCESSIBILITY
+                            </span>
+
+                            <strong id="zoneAccessibility">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="zone-data-card">
+
+                            <span>
+                                RISK LEVEL
+                            </span>
+
+                            <strong id="zoneLevel">
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 BOTTOM PANELS
+            ========================== -->
+
+            <section class="bottom-grid">
+
+                <!-- RESOURCE STATUS -->
+
+                <div class="panel resource-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-kicker">
+                                RESOURCE STATUS
+                            </span>
+
+                            <h3>
+                                Available Supplies
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource">
+
+                        <div class="resource-top">
+
+                            <span>
+                                WATER
+                            </span>
+
+                            <strong>
+                                24,800 L
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <div style="width: 72%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource">
+
+                        <div class="resource-top">
+
+                            <span>
+                                FOOD
+                            </span>
+
+                            <strong>
+                                18,400 KG
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <div style="width: 61%"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="resource">
+
+                        <div class="resource-top">
+
+                            <span>
+                                MEDICINE
+                            </span>
+
+                            <strong>
+                                4,200 UNITS
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <div style="width: 43%"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SYSTEM ALERTS -->
+
+                <div class="panel alert-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <span class="panel-kicker">
+                                SYSTEM ALERTS
+                            </span>
+
+                            <h3>
+                                Operational Events
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert">
+
+                        <div class="alert-icon">
+                            !
+                        </div>
+
+                        <div>
+                            <strong>
+                                Zone C requires immediate response
+                            </strong>
+
+                            <small>
+                                Priority score increased to 98
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert">
+
+                        <div class="alert-icon neutral">
+                            ↗
+                        </div>
+
+                        <div>
+                            <strong>
+                                Alternative route available
+                            </strong>
+
+                            <small>
+                                Estimated delay: 4.2 hours
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>
