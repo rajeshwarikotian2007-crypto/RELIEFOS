@@ -4987,3 +4987,96 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 })();
+// ==========================================
+// RELIEFOS SIDEBAR NAVIGATION
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const navButtons = document.querySelectorAll(".nav-item");
+
+    navButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const target = button.dataset.target;
+
+            if (!target) return;
+
+            // Remove active state from all buttons
+            navButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            // Activate clicked button
+            button.classList.add("active");
+
+            // Hide all sections
+            document.querySelectorAll(".page-section").forEach(section => {
+                section.style.display = "none";
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(target);
+
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+                selectedSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+
+    });
+
+});
+// ==========================================
+// RELIEFOS SIDEBAR NAVIGATION
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const navButtons = document.querySelectorAll(".nav-item");
+
+    const sectionTargets = {
+        "command-center": "affected",
+        "simulation-section": "population",
+        "resources-section": "allocationResult",
+        "forecast-section": "currentDemand"
+    };
+
+    navButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const target = button.dataset.target;
+            const elementId = sectionTargets[target];
+
+            if (!elementId) return;
+
+            const targetElement = document.getElementById(elementId);
+
+            if (!targetElement) {
+                console.warn("RELIEFOS: Section not found:", elementId);
+                return;
+            }
+
+            // Active button
+            navButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            // Scroll to the corresponding section
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+});
